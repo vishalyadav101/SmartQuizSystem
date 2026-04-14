@@ -1,0 +1,20 @@
+﻿@using SmartQuizSystem.Models
+@model Question
+
+<h3>
+    Question @ViewBag.QNumber: @Model.QuestionText
+</h3>
+
+<form method="post" action="/Quiz/SubmitAnswer">
+
+    <input type="hidden" name="questionId" value="@Model.Id" />
+
+    <input type="radio" name="selectedAnswer" value="1" required /> @Model.OptionA <br />
+    <input type="radio" name="selectedAnswer" value="2" /> @Model.OptionB <br />
+    <input type="radio" name="selectedAnswer" value="3" /> @Model.OptionC <br />
+    <input type="radio" name="selectedAnswer" value="4" /> @Model.OptionD <br />
+
+    <br />
+    <button type="submit">Next</button>
+
+</form>

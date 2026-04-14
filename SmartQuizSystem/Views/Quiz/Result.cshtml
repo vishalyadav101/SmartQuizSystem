@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Result";
+}
+
+<h2>Quiz Result</h2>
+
+<p>Total Questions: @ViewBag.Total</p>
+<p>Correct Answers: @ViewBag.Correct</p>
+<p>Wrong Answers: @ViewBag.Wrong</p>
+<p>Percentage: @ViewBag.Percent %</p>
+
+@if (ViewBag.Percent == 100)
+{
+    <p style="color:green;">Excellent 🎉</p>
+}
+else if (ViewBag.Percent >= 50)
+{
+    <p style="color:orange;">Good 👍</p>
+}
+else
+{
+    <p style="color:red;">Needs Improvement 😅</p>
+}
+
+<br />
+<a href="/Quiz/Start">Restart Quiz</a>
